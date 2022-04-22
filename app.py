@@ -6,11 +6,11 @@ import re
 import joblib
 
 app = Flask(__name__)
-model = load_model('language_predictor.h5')
+model = load_model('resources/language_predictor.h5')
 lang_list = ['Arabic' ,'Danish' ,'Dutch' ,'English' ,'French', 'German', 'Greek' ,'Hindi',
  'Italian', 'Kannada', 'Malayalam', 'Portugeese' ,'Russian' ,'Spanish',
  'Sweedish', 'Tamil', 'Turkish']
-vectorizer = joblib.load('cv.pkl')
+vectorizer = joblib.load('resources/cv.pkl')
 
 @app.route('/')
 def home():
