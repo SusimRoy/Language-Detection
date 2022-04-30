@@ -30,7 +30,7 @@ def predict():
     output = lang_list[res[0]]
 
 
-    return render_template('index.html', prediction_text='The language is {}'.format(output))
+    return render_template('index.html', prediction_text='{}'.format(output))
 
 if __name__ == "__main__":
     app.run(debug=True)

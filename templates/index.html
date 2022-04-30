@@ -14,18 +14,43 @@
 <body>
     <div class="login">
         <h1>Language Prediction</h1>
+
+        {%if not prediction_text %}
     
          <!-- Main Input For Receiving Query to our ML -->
         <form action="{{ url_for('predict')}}"method="post">
             <input type="text" name="rate" placeholder="enter text" required="required" />
             <button type="submit" class="btn btn-primary btn-block btn-large">Predict language</button>
         </form>
+        {%endif%}
     
        <br>
        <br>
-       {{ prediction_text }}
+       {%if prediction_text%}
+       The Predicted Language is <b>{{ prediction_text }}</b>
+       <br/>
+       <br/>
+       <a href="{{ url_for('home')}}"><button class="btn btn-secondary btn-block btn-large">Go back</button></a>
+       {%endif%}
+
+       <!-- go back on button click -->
+            
+
     
      </div>
+   
+    <footer style="	font-size: 15px">
+       
+
+        <hr>
+        <b>
+        <p>PRML Major Project</p>
+        <p>Made by 
+            <Jahnab>Susim Mukul Roy, Jahnab Dutta and Shubham Solanki
+    </p>
+</b>
+    </footer>
+
 
     
     
